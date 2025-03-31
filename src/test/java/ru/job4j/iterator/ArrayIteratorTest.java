@@ -11,7 +11,7 @@ class ArrayIteratorTest {
     @Test
     void whenMultiCallhasNextThenTrue() {
         ArrayIterator iterator = new ArrayIterator(
-                new int[] {1,2,3}
+                new int[]{1, 2, 3}
         );
         assertThat(iterator.hasNext());
         assertThat(iterator.hasNext());
@@ -26,6 +26,7 @@ class ArrayIteratorTest {
         assertThat(iterator.next()).isEqualTo(2);
         assertThat(iterator.next()).isEqualTo(3);
     }
+
     @Test
     void whenNextEmpty() {
         ArrayIterator iterator = new ArrayIterator(
