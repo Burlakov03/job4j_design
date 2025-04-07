@@ -51,7 +51,6 @@ class ListUtilsTest {
         assertThat(input).hasSize(2).containsSequence(1, 3);
     }
 
-
     @Test
     void shouldReplaceElementsMatchingPredicate() {
         ListUtils.addBefore(input, 1, 2);
