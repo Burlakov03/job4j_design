@@ -57,25 +57,22 @@ public class SimpleLinkedList<E> implements SimpleLinked<E> {
 
         private final int expectedModCount = modCount;
 
-        private int index = 0;
-
         @Override
         public E next() {
-            if (expectedModCount != modCount) {
-                throw new ConcurrentModificationException();
-            }
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
             E value = cursor.item;
             cursor = cursor.next;
-            index++;
             return value;
         }
 
         @Override
         public boolean hasNext() {
-            return index < size;
+            if (expectedModCount != modCount) {
+                throw new ConcurrentModificationException();
+            }
+            return cursor != null;
         }
 
         @Override
