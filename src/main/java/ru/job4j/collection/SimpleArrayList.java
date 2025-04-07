@@ -21,7 +21,7 @@ public class SimpleArrayList<T> implements SimpleList<T> {
         container[size++] = value;
     }
 
-    public void resize() {
+    private void resize() {
         int newSize = (container.length == 0) ? 1 : container.length * 2;
         container = Arrays.copyOf(container, newSize);
     }
